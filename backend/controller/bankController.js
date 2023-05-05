@@ -2,7 +2,7 @@ const Account = require('../models/bankModel')
 
 const checkBalance = async (req, res) => {
     try {
-      const accountNumber = req.params.accountNumber
+      const { accountNumber } = req.params
       // Retrieve the account information from the database or some other source
       const accountInfo = await Account.findOne({ accountNumber })
       if (!accountInfo) {
