@@ -10,10 +10,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    bank: {
+    bank: [{
         type: Schema.Types.ObjectId,
         ref: 'Bank'
-    }
+    }]
 }, {
     timestamps: true
 })
