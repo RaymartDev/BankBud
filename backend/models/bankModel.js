@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 
-const accountSchema = new mongoose.Schema({
+const bankSchema = new mongoose.Schema({
   accountNumber: {
     type: Number,
     required: true,
-    unique: true
+    unique: true,
+    primaryKey: true
   },
   balance: {
     type: Number,
@@ -14,7 +15,8 @@ const accountSchema = new mongoose.Schema({
   },
   currency: {
     type: String,
-    required: true
+    required: false,
+    default: 'USD'
   },
   status: {
     type: Number,
@@ -25,6 +27,4 @@ const accountSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Account = mongoose.model('Account', accountSchema)
-
-module.exports = Account
+module.exports = mongoose.model('Account', bankSchema)
