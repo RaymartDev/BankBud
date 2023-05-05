@@ -4,8 +4,7 @@ const bankSchema = new mongoose.Schema({
   accountNumber: {
     type: Number,
     required: true,
-    unique: true,
-    primaryKey: true
+    unique: true
   },
   balance: {
     type: Number,
@@ -27,4 +26,4 @@ const bankSchema = new mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Account', bankSchema)
+module.exports = mongoose.model('Bank', bankSchema)
