@@ -8,13 +8,12 @@ const {
 } = require('../controller/bankController')
 
 module.exports = (jsonParser) => {
-    // Define a GET request handler for '/api/accounts/:accountNumber'
+    // get request
     router.get('/balance/:accountNumber', checkBalance)
-
+    
+    // post requests
     router.post('/deposit', jsonParser, deposit)
-
     router.post('/withdraw', jsonParser, withdraw)
-
     router.post('/close', jsonParser, closeAccount)
 
     return router
