@@ -1,10 +1,10 @@
-const Account = require('../models/bankModel')
+const Bank = require('../models/bankModel')
 
 const checkBalance = async (req, res) => {
     try {
       const { accountNumber } = req.params
       // Retrieve the account information from the database or some other source
-      const accountInfo = await Account.findOne({ accountNumber })
+      const accountInfo = await Bank.findOne({ accountNumber })
       if (!accountInfo) {
         // If no account information is found, return a 404 Not Found error
         return res.status(404).json({ error: 'Account not found' })
@@ -21,7 +21,7 @@ const deposit = async (req, res) => {
     try {
         const { accountNumber, depositAmount } = req.body
         // Find account
-        const account = await Account.findOne({ accountNumber })
+        const account = await Bank.findOne({ accountNumber })
 
         // If not found
         if(!account) {
@@ -44,7 +44,7 @@ const withdraw = async (req, res) => {
     try {
         const { accountNumber, depositAmount } = req.body
         // Find account
-        const account = await Account.findOne({ accountNumber })
+        const account = await Bank.findOne({ accountNumber })
 
         // If not found
         if(!account) {
@@ -72,7 +72,7 @@ const closeAccount = async(req, res) => {
     try {
         const { accountNumber } = req.body
         // Find account
-        const account = await Account.findOne({ accountNumber })
+        const account = await Bank.findOne({ accountNumber })
 
         // If not found
         if(!account) {
