@@ -1,13 +1,14 @@
-const express = require('express')
-const router = express.Router()
-const {
+import {Router} from 'express';
+import {
     checkBalance,
     deposit,
     withdraw,
     closeAccount
-} = require('../controller/bankController')
+} from '../controller/bankController';
 
-module.exports = (jsonParser) => {
+const router = Router()
+
+export default (jsonParser) => {
     // get request
     router.get('/balance/:accountNumber', checkBalance)
     

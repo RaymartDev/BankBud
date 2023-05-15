@@ -1,15 +1,16 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bankRoutes = require('./routes/banks')
+import express,{json} from 'express';
+import {connect} from 'mongoose';
+import bankRoutes from './routes/banks';
+import dotenv from 'dotenv'
 
 // environment variables
-require('dotenv').config()
+dotenv.config()
 const port = process.env.PORT || 4000
 
 // Initialize express app
 const app = express()
 
-mongoose.connect(process.env.MONGODB_URI, {
+connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(() => {
@@ -17,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log('Connected to the MongoDB')
 
     // routes
-    app.use('/api/bank',bankRoutes(express.json()))
+    app.use('/api/bank', bankRoutes(json()))
 
     app.listen(port, () => {
         console.log(`Listening to port ${port}`)

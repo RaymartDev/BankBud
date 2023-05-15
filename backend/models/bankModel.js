@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import {Schema as _Schema,model} from 'mongoose';
 
-const bankSchema = new mongoose.Schema({
+const bankSchema = new _Schema({
   accountNumber: {
     type: Number,
     required: true,
@@ -21,9 +21,13 @@ const bankSchema = new mongoose.Schema({
     type: Number,
     required: false,
     default: 1
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('Bank', bankSchema)
+export default model('Bank', bankSchema)
