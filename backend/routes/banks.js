@@ -10,7 +10,7 @@ const router = Router()
 
 export default (jsonParser) => {
     // get request
-    router.get('/balance/:accountNumber', checkBalance)
+    router.get('/balance/:accountNumber', jsonParser , checkBalance)
     
     // post requests
     router.post('/deposit', jsonParser, deposit)
