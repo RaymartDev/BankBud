@@ -8,6 +8,7 @@ import { findOne } from '../models/bankModel';
      * @param req the object for request
      * @param res the object for response
      */  
+
 const checkBalance = async (req, res) => {
     try {
 
@@ -39,6 +40,7 @@ const checkBalance = async (req, res) => {
     
 const deposit = async (req, res) => {
     try {
+
         const { accountNumber, depositAmount } = req.body
         // Find account
         const account = await findOne({ accountNumber })
@@ -54,7 +56,7 @@ const deposit = async (req, res) => {
 
         // updated account
         res.status(200).json({ balance: account.balance })
-    }catch(err) {
+    } catch(err) {
         // If there is an error, return a 500 Internal Server Error
         return res.status(500).json({ error: 'Internal server error' })
     }
@@ -72,6 +74,7 @@ const deposit = async (req, res) => {
 
 const withdraw = async (req, res) => {
     try {
+
         const { accountNumber, depositAmount } = req.body
         // Find account
         const account = await findOne({ accountNumber })
@@ -92,7 +95,7 @@ const withdraw = async (req, res) => {
 
         // return updated account
         res.status(200).json({ balance: account.balance })
-    }catch(err) {
+    } catch(err) {
         // If there is an error, return a 500 Internal Server Error
         return res.status(500).json({ error: 'Internal server error' })
     }
@@ -110,6 +113,7 @@ const withdraw = async (req, res) => {
 
 const closeAccount = async(req, res) => {
     try {
+        
         const { accountNumber } = req.body
         // Find account
         const account = await findOne({ accountNumber })
@@ -129,7 +133,7 @@ const closeAccount = async(req, res) => {
 
         // return updated status
         res.status(200).json({ status: account.status })
-    }catch(err) {
+    } catch(err) {
         // Unknown error
         return res.status(500).json({ error: 'Internal server error' })
     }
