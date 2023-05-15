@@ -1,5 +1,5 @@
-import express,{json} from 'express';
-import {connect} from 'mongoose';
+import express, { json } from 'express';
+import { connect } from 'mongoose';
 import bankRoutes from './routes/banks';
 import dotenv from 'dotenv'
 

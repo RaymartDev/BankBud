@@ -1,4 +1,4 @@
-import {findOne} from '../models/bankModel';
+import { findOne } from '../models/bankModel';
 
 const checkBalance = async (req, res) => {
     try {

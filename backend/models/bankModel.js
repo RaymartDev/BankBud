@@ -1,4 +1,7 @@
-import {Schema as _Schema,model} from 'mongoose';
+import {
+  Schema as _Schema,
+  model
+} from 'mongoose';
 
 const bankSchema = new _Schema({
   accountNumber: {
