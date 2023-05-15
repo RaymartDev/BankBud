@@ -11,7 +11,7 @@ const userSchema = new _Schema({
         required: true
     },
     bank: [{
-        type: Schema.Types.ObjectId,
+        type: _Schema.Types.ObjectId,
         ref: 'Bank'
     }]
 }, {

@@ -23,7 +23,7 @@ const bankSchema = new _Schema({
     default: 1
   },
   owner: {
-    type: Schema.Types.ObjectId,
+    type: _Schema.Types.ObjectId,
     ref: 'User'
   }
 }, {
