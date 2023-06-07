@@ -13,10 +13,10 @@ const userSchema = new _Schema({
         type: String,
         required: true
     },
-    bank: [{
+    bank: {
         type: _Schema.Types.ObjectId,
         ref: 'Bank'
-    }]
+    }
 }, {
     timestamps: true
 })

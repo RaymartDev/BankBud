@@ -1,4 +1,4 @@
-import { findOne } from '../models/bankModel';
+import { Transaction, Bank, User } from '../models';
 
     /**
      * ? Check the balance of the account based on the account number given
@@ -12,8 +12,8 @@ import { findOne } from '../models/bankModel';
 const checkBalance = async (req, res) => {
     try {
 
-      const { accountNumber } = req.params
-      const accountInfo = await findOne({ accountNumber })
+      const { id } = req.params
+      const accountInfo = await Bank.findOne({ _id: id })
 
       // if account not found
       if (!accountInfo) {
@@ -21,7 +21,16 @@ const checkBalance = async (req, res) => {
       }
 
       // if found
-      res.status(200).json( {balance : accountInfo.balance })
+      const transactionHistory = new Transaction({
+        transactionType: 0,
+        amount: 0,
+        actor: accountInfo.owner,
+        owner: accountInfo.owner
+      })
+
+      await transactionHistory.save()
+
+      res.status(200).json( { msg: 'Successfully checked balance', balance : accountInfo.balance })
 
     } catch (err) {
       // Unknown error
@@ -41,21 +50,31 @@ const checkBalance = async (req, res) => {
 const deposit = async (req, res) => {
     try {
 
-        const { accountNumber, depositAmount } = req.body
+        const { id, depositAmount } = req.body
         // Find account
-        const account = await findOne({ accountNumber })
+        const account = await Bank.findOne({ _id: id })
 
         // If not found
         if(!account) {
             return res.status(404).json({ error: 'Account not found' })
         }
+
+        // if found
+        const transactionHistory = new Transaction({
+            transactionType: 1,
+            amount: depositAmount,
+            actor: accountInfo.owner,
+            owner: accountInfo.owner
+        })
+
+        await transactionHistory.save()
       
         // Add the deposit amount and save
         account.balance += depositAmount
         await account.save()
 
         // updated account
-        res.status(200).json({ balance: account.balance })
+        res.status(200).json({ msg: `Successfully deposited ${depositAmount}`,balance: account.balance })
     } catch(err) {
         // If there is an error, return a 500 Internal Server Error
         return res.status(500).json({ error: 'Internal server error' })
@@ -75,9 +94,9 @@ const deposit = async (req, res) => {
 const withdraw = async (req, res) => {
     try {
 
-        const { accountNumber, depositAmount } = req.body
+        const { id, withdrawalAmount } = req.body
         // Find account
-        const account = await findOne({ accountNumber })
+        const account = await Bank.findOne({ _id: id })
 
         // If not found
         if(!account) {
@@ -89,14 +108,86 @@ const withdraw = async (req, res) => {
             return res.status(400).json({ error: 'Insufficient balance' })
         }
 
+        // if found
+        const transactionHistory = new Transaction({
+            transactionType: 2,
+            amount: withdrawalAmount,
+            actor: accountInfo.owner,
+            owner: accountInfo.owner
+        })
+
+        await transactionHistory.save()
+
         // Add the deposit amount and save
-        account.balance -= depositAmount
+        account.balance -= withdrawalAmount
         await account.save()
 
         // return updated account
-        res.status(200).json({ balance: account.balance })
+        res.status(200).json({ msg: `Successfully withdrawn ${withdrawalAmount}`,balance: account.balance })
     } catch(err) {
         // If there is an error, return a 500 Internal Server Error
+        return res.status(500).json({ error: 'Internal server error' })
+    }
+}
+    /**
+     * ? This will transfer balance from one account to another 
+     * ! If account number did not exist return 404
+     * ! If account lacks of balance return 400
+     * * It will return to 200 and provide info what transcribed!
+     * ! If it catched any unknown error return to 500
+     * @param req the object for request
+     * @param res the object for response
+     */  
+const transaferBalance = async(req, res) => {
+    try {
+
+        const { from, to, balance } = req.body
+
+        // Find account
+        const account = await Bank.findOne({ _id: from })
+
+        if(account.balance < balance) {
+            return res.status(400).json({ error: 'Insufficient balance' })
+        }
+
+        if(!account) {
+            return res.status(404).json({ error: 'Account not found' })
+        }
+
+        const accountTo = await User.findOne({ email: to })
+            .select('bank')
+            .populate('bank')
+
+        if(!accountTo) {
+            return res.status(404).json({ error: 'User not found' })
+        }
+
+        // if found
+        const transactionHistory = new Transaction({
+            transactionType: 3,
+            amount: balance,
+            actor: account.owner,
+            owner: account.owner
+        })
+
+        const transactionHistory2 = new Transaction({
+            transactionType: 3,
+            amount: balance,
+            actor: account.owner,
+            owner: accountTo.owner
+        })
+
+        await transactionHistory.save()
+        await transactionHistory2.save()
+
+        account.balance -= balance
+        accountTo.bank.balance += balance
+
+        await account.save()
+        await accountTo.bank.save()
+
+        res.status(200).json({ msg: 'Successful Transfer!', balance: account.balance })
+    }catch(err) {
         return res.status(500).json({ error: 'Internal server error' })
     }
 }
@@ -114,9 +205,9 @@ const withdraw = async (req, res) => {
 const closeAccount = async(req, res) => {
     try {
         
-        const { accountNumber } = req.body
+        const { id } = req.body
         // Find account
-        const account = await findOne({ accountNumber })
+        const account = await Bank.findOne({ _id: id })
 
         // If not found
         if(!account) {
@@ -132,7 +223,7 @@ const closeAccount = async(req, res) => {
         await account.save()
 
         // return updated status
-        res.status(200).json({ status: account.status })
+        res.status(200).json({ msg:'Successfully closed account', status: account.status })
     } catch(err) {
         // Unknown error
         return res.status(500).json({ error: 'Internal server error' })
