@@ -28,7 +28,11 @@ const bankSchema = new _Schema({
   owner: {
     type: _Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  transactionHistory: [{
+    type: _Schema.Types.ObjectId,
+    ref: 'Transaction'
+  }]
 }, {
   timestamps: true
 });
