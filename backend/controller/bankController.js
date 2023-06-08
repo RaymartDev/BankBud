@@ -1,4 +1,6 @@
-import { Transaction, Bank, User } from '../models';
+import Transaction from '../models/transactionModel';
+import User from '../models/userModel';
+import Bank from '../models/bankModel'
 
     /**
      * ? Check the balance of the account based on the account number given
@@ -12,8 +14,7 @@ import { Transaction, Bank, User } from '../models';
 const checkBalance = async (req, res) => {
     try {
 
-      const { id } = req.params
-      const accountInfo = await Bank.findOne({ _id: id })
+      const accountInfo = await Bank.findOne({ owner: req.user._id })
 
       // if account not found
       if (!accountInfo) {
@@ -50,9 +51,9 @@ const checkBalance = async (req, res) => {
 const deposit = async (req, res) => {
     try {
 
-        const { id, depositAmount } = req.body
+        const { depositAmount } = req.body
         // Find account
-        const account = await Bank.findOne({ _id: id })
+        const account = await Bank.findOne({ owner: req.user._id })
 
         // If not found
         if(!account) {
@@ -94,9 +95,9 @@ const deposit = async (req, res) => {
 const withdraw = async (req, res) => {
     try {
 
-        const { id, withdrawalAmount } = req.body
+        const { withdrawalAmount } = req.body
         // Find account
-        const account = await Bank.findOne({ _id: id })
+        const account = await Bank.findOne({ owner: req.user._id })
 
         // If not found
         if(!account) {
@@ -138,13 +139,13 @@ const withdraw = async (req, res) => {
      * @param req the object for request
      * @param res the object for response
      */  
-const transaferBalance = async(req, res) => {
+const transferBalance = async(req, res) => {
     try {
 
-        const { from, to, balance } = req.body
+        const { to, balance } = req.body
 
         // Find account
-        const account = await Bank.findOne({ _id: from })
+        const account = await Bank.findOne({ owner: req.user._id })
 
         if(account.balance < balance) {
             return res.status(400).json({ error: 'Insufficient balance' })
@@ -205,9 +206,8 @@ const transaferBalance = async(req, res) => {
 const closeAccount = async(req, res) => {
     try {
         
-        const { id } = req.body
         // Find account
-        const account = await Bank.findOne({ _id: id })
+        const account = await Bank.findOne({ owner: req.user._id })
 
         // If not found
         if(!account) {
@@ -234,5 +234,6 @@ export default {
     checkBalance,
     withdraw,
     deposit,
-    closeAccount
+    closeAccount,
+    transferBalance
 }
