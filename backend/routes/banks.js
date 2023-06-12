@@ -1,11 +1,11 @@
 const express = require('express')
-import {
+const {
     deposit,
     withdraw,
     transferBalance,
     checkBalance,
     closeAccount
-} from '../controller/bankController';
+} = require('../controller/bankController');
 
 const router = express.Router()
 

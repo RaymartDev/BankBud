@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log('Connected to the MongoDB')
 
     // routes
-    app.use('/api/bank', bankRoutes(express.json(), requireAuth()))
+    app.use('/api/bank', bankRoutes(express.json(), requireAuth))
 
     app.listen(port, () => {
         console.log(`Listening to port ${port}`)
