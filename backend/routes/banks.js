@@ -11,7 +11,7 @@ const router = express.Router()
 
 module.exports = (jsonParser, auth) => {
     // get request
-    router.get('/balance/:accountNumber', jsonParser , auth, checkBalance)
+    router.get('/balance', jsonParser , auth, checkBalance)
     
     // post requests
     router.post('/deposit', jsonParser, auth, deposit)

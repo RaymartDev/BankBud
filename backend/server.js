@@ -2,6 +2,7 @@ const express = require('express')
 const requireAuth = require('./middleware/requireAuth')
 const mongoose = require('mongoose')
 const bankRoutes = require('./routes/banks')
+const userRoutes = require('./routes/user')
 require('dotenv').config()
 
 const port = process.env.PORT || 4000
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
     // routes
     app.use('/api/bank', bankRoutes(express.json(), requireAuth))
+    app.use('/api/user', userRoutes(express.json()))
 
     app.listen(port, () => {
         console.log(`Listening to port ${port}`)
