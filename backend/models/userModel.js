@@ -14,11 +14,13 @@ const userSchema = new mongoose.Schema({
     },
     bank: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Bank'
+        ref: 'Bank',
+        required: false
     },
     isAdmin: {
-        type: Number,
-        required: true
+        type: Boolean,
+        required: false,
+        defualt: false
     }
 }, {
     timestamps: true
