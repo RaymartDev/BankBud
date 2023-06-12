@@ -1,17 +1,15 @@
-import express, { json } from 'express';
-import { connect } from 'mongoose';
-import bankRoutes from './routes/banks';
-import dotenv from 'dotenv'
-import { requireAuth } from 'requireAuth'
+const express = require('express')
+const requireAuth = require('./middleware/requireAuth')
+const mongoose = require('mongoose')
+const bankRoutes = require('./routes/banks')
+require('dotenv').config()
 
-// environment variables
-dotenv.config()
 const port = process.env.PORT || 4000
 
 // Initialize express app
 const app = express()
 
-connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(() => {
@@ -19,7 +17,7 @@ connect(process.env.MONGODB_URI, {
     console.log('Connected to the MongoDB')
 
     // routes
-    app.use('/api/bank', bankRoutes(json(), requireAuth()))
+    app.use('/api/bank', bankRoutes(express.json(), requireAuth()))
 
     app.listen(port, () => {
         console.log(`Listening to port ${port}`)

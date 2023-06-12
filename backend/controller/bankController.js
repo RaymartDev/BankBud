@@ -1,6 +1,6 @@
-import Transaction from '../models/transactionModel';
-import User from '../models/userModel';
-import Bank from '../models/bankModel'
+const Transaction = require('../models/transactionModel')
+const User = require('../models/userModel')
+const Bank = require('../models/bankModel')
 
     /**
      * ? Check the balance of the account based on the account number given
@@ -230,7 +230,7 @@ const closeAccount = async(req, res) => {
     }
 }
 
-export default {
+module.exports = {
     checkBalance,
     withdraw,
     deposit,

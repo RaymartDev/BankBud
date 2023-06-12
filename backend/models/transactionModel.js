@@ -1,9 +1,6 @@
-import {
-    Schema as _Schema,
-    model
-} from 'mongoose'
+const mongoose = require('mongoose')
 
-const transactionSchema = new _Schema({
+const transactionSchema = new mongoose.Schema({
     transactionType: {
         type: Number,
         required: true
@@ -13,15 +10,15 @@ const transactionSchema = new _Schema({
         required: true
     },
     actor: {
-        type: _Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     owner: {
-        type: _Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
 }, {
     timestamps: true
 })
 
-export default model('Transaction', transactionSchema)
+module.exports = mongoose.model('Transaction', transactionSchema)
