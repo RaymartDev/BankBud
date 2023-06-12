@@ -167,15 +167,15 @@ const transferBalance = async(req, res) => {
         const transactionHistory = new Transaction({
             transactionType: 3,
             amount: balance,
-            actor: account.owner,
+            actor: accountTo._id,
             owner: account.owner
         })
 
         const transactionHistory2 = new Transaction({
-            transactionType: 3,
+            transactionType: 4,
             amount: balance,
             actor: account.owner,
-            owner: accountTo.owner
+            owner: accountTo._id
         })
 
         await transactionHistory.save()

@@ -3,7 +3,8 @@ import {
     checkBalance,
     deposit,
     withdraw,
-    closeAccount
+    closeAccount,
+    transferBalance
 } from '../controller/bankController';
 
 const router = Router()
@@ -16,6 +17,7 @@ export default (jsonParser, auth) => {
     router.post('/deposit', jsonParser, auth, deposit)
     router.post('/withdraw', jsonParser, auth, withdraw)
     router.post('/close', jsonParser, auth, closeAccount)
+    router.post('/transfer', jsonParser, auth, transferBalance)
 
     return router
 }
