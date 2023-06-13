@@ -1,6 +1,7 @@
 const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
 const Bank = require('../models/bankModel')
+const Profile = require('../models/profileModel')
 
 const createToken = (_id) => {
     return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
@@ -41,10 +42,16 @@ const registerUser = async(req, res) => {
         const bank = new Bank({
             accountNumber: generateAccountNumber(), // Generate a unique account number
             owner: user._id, // Assign the user as the owner of the bank
-          });
+        });
 
+        const profile = new Profile({
+            owner: user._id
+        })
+
+        await profile.save()
         await bank.save()
-        user.bank = bank._id;
+        user.bank = bank._id
+        user.profile = profile._id
         await user.save()
 
         const token = createToken(user._id)

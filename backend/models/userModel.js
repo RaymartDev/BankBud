@@ -8,6 +8,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    profile: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Profile',
+        required: false
+    },
     password: {
         type: String,
         required: true
