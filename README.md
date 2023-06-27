@@ -1,2 +1,2 @@
 # BankBud
-Your bank buddy
+Simple description
