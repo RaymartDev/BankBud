@@ -1,2 +1,2 @@
 # BankBud
-Simple description
+Simple descriptions
