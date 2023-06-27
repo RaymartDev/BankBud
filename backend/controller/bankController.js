@@ -155,37 +155,37 @@ const transferBalance = async(req, res) => {
             return res.status(404).json({ error: 'Account not found' })
         }
 
-        const accountTo = await User.findOne({ email: to })
+        const recipient = await User.findOne({ email: to })
             .select('bank')
             .populate('bank')
 
-        if(!accountTo) {
-            return res.status(404).json({ error: 'User not found' })
+        if(!recipient) {
+            return res.status(404).json({ error: 'Recipient not found' })
         }
 
         // if found
         const transactionHistory = new Transaction({
-            transactionType: 3,
-            amount: balance,
-            actor: accountTo._id,
-            owner: account.owner
+            transactionType: 3, // Sender Type
+            amount: balance, // amount
+            actor: recipient._id, // Recipient
+            owner: account.owner // Owner of the Account
         })
 
         const transactionHistory2 = new Transaction({
-            transactionType: 4,
-            amount: balance,
-            actor: account.owner,
-            owner: accountTo._id
+            transactionType: 4, // Recipient Type
+            amount: balance, // amount
+            actor: account.owner, // Sender
+            owner: recipient._id // Owner of the Account
         })
 
         await transactionHistory.save()
         await transactionHistory2.save()
 
         account.balance -= balance
-        accountTo.bank.balance += balance
+        recipient.bank.balance += balance
 
         await account.save()
-        await accountTo.bank.save()
+        await recipient.bank.save()
 
         res.status(200).json({ msg: 'Successful Transfer!', balance: account.balance })
     }catch(err) {
