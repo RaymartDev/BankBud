@@ -19,7 +19,7 @@ const requireAuth = async (req, res, next) => {
     } catch (err) {
       res.status(401).json({ error: 'You are not authorized to do that' })
     }
-};
+}
   
 
 module.exports = requireAuth
