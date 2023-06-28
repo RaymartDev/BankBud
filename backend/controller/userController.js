@@ -33,6 +33,17 @@ const loginUser = async(req, res) => {
     }
 }
 
+const loginToken = async(req, res) => {
+    const { token } = req.body
+
+    try{
+        const decoded = jwt.verify(token, process.env.SECRET)
+        res.status(200).json({ ...decoded, message: 'Login successful' })
+    }catch(err) {
+        res.status(400).json({error: err.message})
+    }
+}
+
 // register user
 const registerUser = async(req, res) => {
     const {email, password} = req.body
@@ -64,5 +75,6 @@ const registerUser = async(req, res) => {
 
 module.exports = {
     loginUser,
-    registerUser
+    registerUser,
+    loginToken
 }

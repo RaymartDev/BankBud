@@ -1,6 +1,10 @@
-import Pages from './pages'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Landing from './pages/Landing'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext';
+import { useAuthContext } from './hooks/useAuthContext'
+import './assets/css/main.css'
 
 const App = () => {
   const { user } = useAuthContext()
@@ -10,13 +14,13 @@ const App = () => {
       <Routes>
         <Route 
           path='/'
-          element={user ? <Pages.Home /> : <Pages.Landing />} />
+          element={user ? <Home /> : <Landing />} />
         <Route 
           path='/login'
-          element={user ? <Navigate to="/" /> : <Pages.Login />} />
+          element={user ? <Navigate to="/" /> : <Login />} />
         <Route 
           path='/register'
-          element={user ? <Navigate to="/" /> : <Pages.Register />} />
+          element={user ? <Navigate to="/" /> : <Register />} />
       </Routes>
     </BrowserRouter>
   )
