@@ -191,7 +191,7 @@ input {
 
 footer {
     max-width: 1440px;
-    height: 360px;
+    height: auto;
     margin: auto;
     background: var(--primary-color);
     align-items: center;
@@ -227,6 +227,132 @@ footer .logoname {
 footer .flag {
     height: 40px;
 }
+
+/* Log in CSS */
+
+.login {
+    min-height: 100vh;
+    
+}
+
+.loginForm {
+    width: 500px;
+    height: 610px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin: 50px auto;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    background: linear-gradient(white 25%, #0092E8 150%, #00A7FF 110% );
+}
+
+.loginForm, .loginDetails, p {
+    color: black;
+}
+
+.loginDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.loginDetails p, hr, input {
+    margin: 15px 0;
+}
+
+.loginDetails hr {
+    border: 3px solid var(--primary-color);
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.loginDetails p {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.loginDetails input {
+    width: 300px;
+    font-size: .8em;
+    padding: 10px;
+}
+
+.loginDetails button {
+    width: 300px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+
+.loginSection .bottom-line {
+    border: 2px solid var(--primary-color);
+    width: 100px;
+    
+}
+
+.forgot-create {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Register CSS */
+
+.register {
+    min-height: 100vh;
+}
+
+.registerForm {
+    width: 500px;
+    height: 610px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin: 50px auto;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    background: linear-gradient(white 25%, #0092E8 150%, #00A7FF 110% );
+}
+
+.registerDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.registerDetails hr {
+    border: 3px solid var(--primary-color);
+    border-radius: 20px;
+    width: 150px;
+}
+
+.registerDetails input {
+    padding: 10px;
+    width: 300px;
+}
+
+.registerDetails button {
+    width: 300px;
+    padding: 10px;
+    margin-top: 130px;
+    border-radius: 20px;
+}
+
 
 @media (max-width: 1366px) {
     .wall h2 {
@@ -293,6 +419,7 @@ footer .flag {
         height: 40px;
     }
 }
+
 
 @media (max-width: 1024px) {
 
@@ -490,6 +617,30 @@ footer .flag {
     footer p {
         font-size: .9em;
     }
+
+    /* Log in CSS */
+
+    .loginForm {
+        width: 400px;
+        height: 510px;
+    }
+
+    /* Register CSS */
+
+.registerForm {
+    width: 400px;
+    height: 510px;
+}
+
+.registerDetails button {
+    margin: 90px;
+}
+
+.registerDetails input, button {
+    padding: 5px;
+    width: 280px;
+}
+
 }
 
 
@@ -717,6 +868,69 @@ footer .flag {
     footer p {
         font-size: .6em;
     }
+
+    /* Log in CSS */
+
+.login {
+    min-height: 100vh;
+}
+
+.loginForm {
+    width: 300px;
+    height: 410px;
+    padding: 20px 0;
+}
+
+.loginDetails p, hr, input {
+    margin: 10px 0;
+}
+
+.loginDetails hr {
+    border: 2px solid var(--primary-color);
+    width: 100px;
+}
+
+.loginDetails p {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.loginDetails input {
+    width: 250px;
+    font-size: .8em;
+    padding: 5px;
+}
+
+.loginDetails button {
+    width: 250px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
+
+.forgot-create {
+    font-size: .8em;
+}
+
+    /* Register CSS */
+
+    .registerForm {
+        width: 300px;
+        height: 510px;
+    }
+    
+    .registerDetails button {
+        margin: 120px;
+        width: 250px;
+    }
+    
+    .registerDetails input{
+        padding: 5px;
+        width: 250px;
+    }
+
 }
 
 
@@ -807,7 +1021,7 @@ footer .flag {
     }
 
     footer {
-        height: 260px;
+        height: 200px;
     }
     .footer-containter {
         max-width: 350px;
