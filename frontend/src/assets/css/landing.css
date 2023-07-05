@@ -1,0 +1,1042 @@
+nav {
+    max-width: 1440px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 0 100px;
+}
+
+button {
+    background: var(--primary-color);
+    border: none;
+}
+
+nav img {
+    height: 80px;
+}
+
+nav button {
+    background: var(--primary-color);
+    color: white;
+    font-size: 1em;
+    padding: .5em 2em;
+    text-align: center;
+    border-radius: 2em;
+    border: none;
+}
+
+.wall {
+    max-width: 1440px;
+    background-image: url("../imageSlider/heroimage.jpg");
+    height: 615px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wall .tagline h2, p, button{
+    color: white;
+}
+
+.wall h2 {
+    font-size: 4em;
+    max-width: 900px;
+    margin: auto;
+}
+
+.wall p {
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.wall .learnbtn {
+    padding: 10px 50px;
+    border-radius: 3em;
+    font-size: 1em;
+    position: relative;
+    left: 250px;
+}
+
+.message {
+    display: flex;
+    align-self:flex-end;
+    margin-bottom: 10px;    
+}
+input {
+    border-radius: 2em;
+    padding: .2em;
+    border: 1px solid;
+    border-color: var(--primary-color);
+    width: 200px;
+}
+
+.message {
+    padding: .2em 2em;
+}
+
+.send {
+    border-radius: 2em;
+    padding: .2em 1em;
+    position:relative;
+    right: 20px;
+}
+
+.goals {
+    max-width: 1440px;
+    height: 280px;
+    margin: auto;
+    background: var(--primary-color);
+    padding: 2rem;
+}
+
+.goals hr {
+    border: solid 2px;
+    width: 100px;
+    color: white;
+    margin-top: 2rem;
+}
+
+.goals h2 {
+    color: white;
+}
+
+.goal-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.goal-icons img {
+    width: 5rem;
+    color: white;
+}
+
+
+.bank {
+    color: var(--bank-color);
+}
+
+.bud {
+    color: var(--primary-color);
+}
+
+.download {
+    max-width: 1440px;
+    height: 630px;
+    margin: auto;
+    display: flex;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.download img {
+    height: 500px;
+}
+
+.download .statements p{
+    color: black;
+    text-align: end;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.download .download-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.download .download-button button {
+    padding: 1em;
+    border-radius: 2em;
+}
+
+
+.start {
+    max-width: 1440px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(205,213,226,255);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.start p {
+    color: black;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.start span {
+    font-weight: 700;
+}
+
+.start button {
+    margin-top: 30px;
+    padding: 15px 80px;
+    border-radius: 20px;
+}
+
+footer {
+    max-width: 1440px;
+    height: auto;
+    margin: auto;
+    background: var(--primary-color);
+    align-items: center;
+    display: flex;
+}
+
+.footer-containter {
+    max-width: 1220px;
+    margin: auto;
+}
+
+footer .credit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.credit div{
+    display: flex;
+    align-items: center;
+}
+
+.credit .flag {
+    padding: 0 0 0 30px;
+}
+
+footer .logoname {
+    height: 140px;
+    padding-bottom: 20px;
+}
+
+footer .flag {
+    height: 40px;
+}
+
+/* Log in CSS */
+
+.login {
+    min-height: 100vh;
+    
+}
+
+.loginForm {
+    width: 500px;
+    height: 610px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin: 50px auto;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    background: linear-gradient(white 25%, #0092E8 150%, #00A7FF 110% );
+}
+
+.loginForm, .loginDetails, p {
+    color: black;
+}
+
+.loginDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.loginDetails p, hr, input {
+    margin: 15px 0;
+}
+
+.loginDetails hr {
+    border: 3px solid var(--primary-color);
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.loginDetails p {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.loginDetails input {
+    width: 300px;
+    font-size: .8em;
+    padding: 10px;
+}
+
+.loginDetails button {
+    width: 300px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+
+.loginSection .bottom-line {
+    border: 2px solid var(--primary-color);
+    width: 100px;
+    
+}
+
+.forgot-create {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Register CSS */
+
+.register {
+    min-height: 100vh;
+}
+
+.registerForm {
+    width: 500px;
+    height: 610px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin: 50px auto;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    background: linear-gradient(white 25%, #0092E8 150%, #00A7FF 110% );
+}
+
+.registerDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.registerDetails hr {
+    border: 3px solid var(--primary-color);
+    border-radius: 20px;
+    width: 150px;
+}
+
+.registerDetails input {
+    padding: 10px;
+    width: 300px;
+}
+
+.registerDetails button {
+    width: 300px;
+    padding: 10px;
+    margin-top: 130px;
+    border-radius: 20px;
+}
+
+
+@media (max-width: 1366px) {
+    .wall h2 {
+        font-size: 3em;
+        max-width: 600px;
+        margin: auto;
+        padding: 0;
+    }
+    
+    .wall p {
+       font-size: 1em;
+    }
+    
+    .wall .learnbtn {
+        padding: .5em 4em;
+        border-radius: 3em;
+        position: relative;
+        left: 200px;
+    }
+
+    .goal-icons img {
+        width: 4rem;
+        fill: white;
+    }
+
+    .goals p {
+        font-size: .9em;
+    }
+
+    .download img {
+        height: 450px;
+    }
+    
+    .download .statements p{
+        text-align: end;
+        font-weight: 700;
+        font-size: 2.5em;
+    }
+    
+    .download .download-button button {
+        padding: .9em;
+    }
+
+    .start p {
+        font-size: 2.5em;
+    }
+ 
+    .start button {
+        margin-top: 30px;
+        padding: 10px 60px;
+        border-radius: 20px;
+    }
+
+    .footer-containter {
+        max-width: 1000px;
+    }
+    
+    footer .logoname {
+        height: 120px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 40px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    nav button {
+        font-size: .9em;   
+    }
+
+    .wall h2 {
+    font-size: 2.8em;
+    max-width: 600px;
+    margin: auto;
+    padding: 0;
+    }
+
+    .wall p {
+       font-size: .9em;
+    }
+    
+    .wall .learnbtn {
+        padding: .5em 4em;
+        border-radius: 3em;
+        position: relative;
+        left: 150px;
+    }
+
+    input {
+        width: 180px;
+    }
+
+    .goal-icons img {
+        width: 3.5rem;
+        fill: white;
+    }
+
+    .goals {
+        height: 250px;
+    }
+    .goals hr {
+        border:  solid 1px;
+    }
+    .goals h2 {
+        font-size: 1.3em;
+    }
+    .goals p {
+        font-size: .8em;
+    }
+
+    .download {
+        height: 530px;
+    }
+    .download img {
+        height: 400px;
+    }
+    
+    .download .statements p{
+        text-align: end;
+        font-weight: 700;
+        font-size: 2.2em;
+    }
+    
+    .download .download-button button {
+        padding: .9em;
+    }
+
+    .start {
+        height: 300px;
+    }
+    .start p {
+        font-size: 2.5em;
+    }
+ 
+    .start button {
+        margin-top: 30px;
+        padding: 10px 60px;
+        border-radius: 20px;
+    }
+
+    .footer-containter {
+        max-width: 900px;
+    }
+    
+    footer .logoname {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 30px;
+    }
+
+    footer p {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 912px) {
+
+    nav {
+        padding: 20px;
+    }
+    
+    nav button {
+        font-size: .9em;   
+    }
+
+    .wall {
+        background-size: cover;
+        height: 500px;
+    }
+    .wall h2 {
+    font-size: 2.5em;
+    max-width: 450px;
+    }
+
+    .wall p {
+       font-size: .9em;
+       max-width: 450px;
+    }
+    
+    .wall .learnbtn {
+        padding: .4em 3.3em;
+        left: 120px;
+    }
+
+    input {
+        width: 170px;
+    }
+
+    .goal-icons img {
+        width: 3rem;
+        fill: white;
+    }
+
+    .goals {
+        height: 230px;
+    }
+    
+    .goals hr {
+        border:  solid 1px;
+    }
+    .goals h2 {
+        font-size: 1.2em;
+    }
+    .goals p {
+        font-size: .7em;
+    }
+
+    .download {
+        height: 480px;
+    }
+    .download img {
+        height: 380px;
+    }
+    
+    .download .statements p{
+        text-align: end;
+        font-weight: 700;
+        font-size: 2em;
+    }
+    
+    .download .download-button button {
+        padding: .8em;
+        font-size: .8em;
+    }
+
+    .start {
+        height: 250px;
+    }
+    .start p {
+        font-size: 2.3em;
+    }
+ 
+    .start button {
+        margin-top: 30px;
+        padding: 8px 50px;
+        border-radius: 20px;
+    }
+
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 800px;
+    }
+    
+    footer .logoname {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 30px;
+    }
+
+    footer p {
+        font-size: .9em;
+    }
+
+    /* Log in CSS */
+
+    .loginForm {
+        width: 400px;
+        height: 510px;
+    }
+
+    /* Register CSS */
+
+.registerForm {
+    width: 400px;
+    height: 510px;
+}
+
+.registerDetails button {
+    margin: 90px;
+}
+
+.registerDetails input, button {
+    padding: 5px;
+    width: 280px;
+}
+
+}
+
+
+@media (max-width: 780px) {
+
+    nav {
+        height: 70px;
+    }
+    nav img {
+        height: 70px;
+    }
+    nav button {
+        font-size: .8em;   
+    }
+
+    .wall {
+        background-size: cover;
+        height: 450px;
+    }
+
+    .wall h2 {
+    font-size: 2.2em;
+    max-width: 400px;
+    }
+
+    .wall p {
+       font-size: .8em;
+       max-width: 400px;
+    }
+    
+    .wall .learnbtn {
+        padding: .3em 3.1em;
+        left: 120px;
+    }
+
+    input {
+        width: 150px;
+    }
+
+    .goal-icons img {
+        width: 2.5rem;
+        fill: white;
+    }
+
+    .goals {
+        height: 200px;
+        padding: 1rem;
+    }
+    
+    .goals hr {
+        border:  solid 1px;
+    }
+    .goals h2 {
+        font-size: 1.2em;
+    }
+    .goals p {
+        font-size: .6em;
+    }
+
+    .download {
+        height: 450px;
+    }
+    .download img {
+        height: 330px;
+    }
+    
+    .download .statements p{
+        text-align: end;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    
+    .download .download-button button {
+        padding: .8em;
+        font-size: .5em;
+        font-weight: 400;
+    }
+
+    .start {
+        height: 220px;
+    }
+    .start p {
+        font-size: 2em;
+    }
+ 
+    .start button {
+        margin-top: 15px;
+        padding: 7px 30px;
+        border-radius: 20px;
+    }
+
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 750px;
+    }
+    
+    footer .logoname {
+        height: 80px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 25px;
+    }
+
+    footer p {
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 540px) {
+
+    nav {
+        height: 60px;
+        padding: 0 10px
+    }
+    nav img {
+        height: 60px;
+    }
+    nav button {
+        font-size: .7em;   
+    }
+
+    .wall {
+        background-size: cover;
+        height: 350px;
+    }
+
+    .wall h2 {
+    font-size: 1.5em;
+    max-width: 250px;
+    }
+
+    .wall p {
+       font-size: .6em;
+       max-width: 250px;
+       margin: 10px 0;
+    }
+    
+    .wall .learnbtn {
+        padding: .5em 1em;
+        font-size: .6em;
+        left: 40px;
+    }
+
+    input {
+        width: 100px;
+        padding: .1em;
+    }
+
+    .send {
+        font-size: .6em;
+    }
+
+    .goal-icons img {
+        width: 2.5rem;
+        fill: white;
+    }
+
+    .goals {
+        height: 200px;
+        padding: 1rem;
+    }
+    
+    .goals hr {
+        border:  solid 1px;
+        width: 80px;
+    }
+    .goals h2 {
+        font-size: 1em;
+    }
+    
+    .download {
+        height: 400px;
+    }
+    .download img {
+        height: 280px;
+    }
+    
+    .download .statements p{
+        text-align: end;
+        font-weight: 700;
+        font-size: 1em;
+    }
+    
+    .download .download-button {
+        display: flex;
+        flex-direction: column;
+    }
+    .download .download-button button {
+        padding: .6em;
+        font-size: .6em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .start {
+        height: 220px;
+    }
+ 
+    .start button {
+        margin-top: 15px;
+        padding: 7px 30px;
+        border-radius: 20px;
+    }
+
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 500px;
+    }
+    
+    footer .logoname {
+        height: 80px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 25px;
+    }
+
+    footer p {
+        font-size: .6em;
+    }
+
+    /* Log in CSS */
+
+.login {
+    min-height: 100vh;
+}
+
+.loginForm {
+    width: 300px;
+    height: 410px;
+    padding: 20px 0;
+}
+
+.loginDetails p, hr, input {
+    margin: 10px 0;
+}
+
+.loginDetails hr {
+    border: 2px solid var(--primary-color);
+    width: 100px;
+}
+
+.loginDetails p {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.loginDetails input {
+    width: 250px;
+    font-size: .8em;
+    padding: 5px;
+}
+
+.loginDetails button {
+    width: 250px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
+
+.forgot-create {
+    font-size: .8em;
+}
+
+    /* Register CSS */
+
+    .registerForm {
+        width: 300px;
+        height: 510px;
+    }
+    
+    .registerDetails button {
+        margin: 120px;
+        width: 250px;
+    }
+    
+    .registerDetails input{
+        padding: 5px;
+        width: 250px;
+    }
+
+}
+
+
+@media (max-width: 414px) {
+
+    nav {
+        height: 50px;
+        padding: 0 10px
+    }
+    nav img {
+        height: 50px;
+    }
+    nav button {
+        font-size: .7em;   
+    }
+
+    .wall {
+        background-size: cover;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    .wall h2 {
+        padding-top: 30px;
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    .wall p {
+       font-size: .6em;
+       max-width: 250px;
+       margin: 10px 0;
+    }
+    
+    .wall .learnbtn {
+        padding: .5em 1em;
+        font-size: .6em;
+        position: inherit;
+    }
+
+    .message {
+       position: relative;
+       align-self: end;   
+       padding: .2em .5em;
+    }
+    
+    input {
+        width: 100px;
+        height: 25px;
+        padding: .1em;
+    }
+
+    .send {
+        font-size: .6em;
+    }
+
+    .goal-icons img {
+        width: 2.3rem;
+        fill: white;
+    }
+
+    .goals p {
+        font-size: .6em;
+    }
+    
+    .download {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    .download img {
+        height: 280px;
+        margin-bottom: 20px;
+    }
+
+    .start {
+        height: 220px;
+    }
+ 
+    .start button {
+        margin-top: 15px;
+        padding: 7px 30px;
+        border-radius: 20px;
+    }
+
+    footer {
+        height: 200px;
+    }
+    .footer-containter {
+        max-width: 350px;
+    }
+    
+    footer .logoname {
+        height: 60px;
+        padding-bottom: 10px;
+    }
+    
+    footer .flag {
+        height: 20px;
+    }
+
+    footer p {
+        font-size: .5em;
+    }
+}

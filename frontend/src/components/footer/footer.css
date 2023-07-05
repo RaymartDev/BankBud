@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    position: sticky;
+    top: 100%;
+    
+}
+
+footer p {
+    color: white;
+}
+
+footer .logoname{
+    padding-bottom: 0;
+}
+
