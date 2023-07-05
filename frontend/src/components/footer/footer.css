@@ -1,24 +1,151 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-footer{
+footer {
+    max-width: 1440px;
     height: auto;
+    margin: auto;
+    background: var(--primary-color);
+    align-items: center;
     display: flex;
+}
+
+.footer-containter {
+    max-width: 1220px;
+    margin: auto;
+}
+
+footer .credit{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 5px 20px;
-    position: sticky;
-    top: 100%;
+}
+
+
+footer .logoname {
+    height: 140px;
+    padding-bottom: 20px;
+}
+
+footer .flag {
+    height: 40px;
+}
+
+@media (max-width: 1366px) {
+    .footer-containter {
+        max-width: 1000px;
+    }
     
+    footer .logoname {
+        height: 120px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 40px;
+    }
 }
 
-footer p {
-    color: white;
+@media (max-width: 1024px) {
+    .footer-containter {
+        max-width: 900px;
+    }
+    
+    footer .logoname {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 30px;
+    }
+
+    footer p {
+        font-size: .9em;
+    }
 }
 
-footer .logoname{
-    padding-bottom: 0;
+@media (max-width: 912px) {
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 800px;
+    }
+    
+    footer .logoname {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 30px;
+    }
+
+    footer p {
+        font-size: .9em;
+    }
 }
 
+@media (max-width: 780px) {
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 750px;
+    }
+    
+    footer .logoname {
+        height: 80px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 25px;
+    }
+
+    footer p {
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 540px) {
+    footer {
+        height: 260px;
+    }
+    .footer-containter {
+        max-width: 500px;
+    }
+    
+    footer .logoname {
+        height: 80px;
+        padding-bottom: 20px;
+    }
+    
+    footer .flag {
+        height: 25px;
+    }
+
+    footer p {
+        font-size: .6em;
+    }
+}
+
+@media (max-width: 414px) {
+    footer {
+        height: 200px;
+    }
+    .footer-containter {
+        max-width: 350px;
+    }
+    
+    footer .logoname {
+        height: 60px;
+        padding-bottom: 10px;
+    }
+    
+    footer .flag {
+        height: 20px;
+    }
+
+    footer p {
+        font-size: .5em;
+    }
+}

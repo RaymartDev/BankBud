@@ -1,30 +1,12 @@
-nav {
-    max-width: 1440px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    padding: 0 100px;
-}
-
 button {
     background: var(--primary-color);
+    cursor: pointer;
     border: none;
 }
 
-nav img {
-    height: 80px;
-}
-
-nav button {
-    background: var(--primary-color);
-    color: white;
-    font-size: 1em;
-    padding: .5em 2em;
-    text-align: center;
-    border-radius: 2em;
-    border: none;
+button:hover {
+    transform: scale(1.04);
+    transition:all 0.4s ease-in;
 }
 
 .wall {
@@ -71,6 +53,15 @@ input {
     border: 1px solid;
     border-color: var(--primary-color);
     width: 200px;
+}
+
+.clickable-text {
+    cursor: pointer;
+}
+
+.clickable-text:hover {
+    transform: scale(1.1);
+    transition: transform linear 0.4s;
 }
 
 .message {
@@ -189,26 +180,6 @@ input {
     border-radius: 20px;
 }
 
-footer {
-    max-width: 1440px;
-    height: auto;
-    margin: auto;
-    background: var(--primary-color);
-    align-items: center;
-    display: flex;
-}
-
-.footer-containter {
-    max-width: 1220px;
-    margin: auto;
-}
-
-footer .credit{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 .credit div{
     display: flex;
@@ -217,15 +188,6 @@ footer .credit{
 
 .credit .flag {
     padding: 0 0 0 30px;
-}
-
-footer .logoname {
-    height: 140px;
-    padding-bottom: 20px;
-}
-
-footer .flag {
-    height: 40px;
 }
 
 /* Log in CSS */
@@ -405,27 +367,10 @@ footer .flag {
         padding: 10px 60px;
         border-radius: 20px;
     }
-
-    .footer-containter {
-        max-width: 1000px;
-    }
-    
-    footer .logoname {
-        height: 120px;
-        padding-bottom: 20px;
-    }
-    
-    footer .flag {
-        height: 40px;
-    }
 }
 
 
 @media (max-width: 1024px) {
-
-    nav button {
-        font-size: .9em;   
-    }
 
     .wall h2 {
     font-size: 2.8em;
@@ -496,34 +441,9 @@ footer .flag {
         padding: 10px 60px;
         border-radius: 20px;
     }
-
-    .footer-containter {
-        max-width: 900px;
-    }
-    
-    footer .logoname {
-        height: 100px;
-        padding-bottom: 20px;
-    }
-    
-    footer .flag {
-        height: 30px;
-    }
-
-    footer p {
-        font-size: .9em;
-    }
 }
 
 @media (max-width: 912px) {
-
-    nav {
-        padding: 20px;
-    }
-    
-    nav button {
-        font-size: .9em;   
-    }
 
     .wall {
         background-size: cover;
@@ -598,26 +518,6 @@ footer .flag {
         border-radius: 20px;
     }
 
-    footer {
-        height: 260px;
-    }
-    .footer-containter {
-        max-width: 800px;
-    }
-    
-    footer .logoname {
-        height: 100px;
-        padding-bottom: 20px;
-    }
-    
-    footer .flag {
-        height: 30px;
-    }
-
-    footer p {
-        font-size: .9em;
-    }
-
     /* Log in CSS */
 
     .loginForm {
@@ -645,16 +545,6 @@ footer .flag {
 
 
 @media (max-width: 780px) {
-
-    nav {
-        height: 70px;
-    }
-    nav img {
-        height: 70px;
-    }
-    nav button {
-        font-size: .8em;   
-    }
 
     .wall {
         background-size: cover;
@@ -731,40 +621,9 @@ footer .flag {
         padding: 7px 30px;
         border-radius: 20px;
     }
-
-    footer {
-        height: 260px;
-    }
-    .footer-containter {
-        max-width: 750px;
-    }
-    
-    footer .logoname {
-        height: 80px;
-        padding-bottom: 20px;
-    }
-    
-    footer .flag {
-        height: 25px;
-    }
-
-    footer p {
-        font-size: .8em;
-    }
 }
 
 @media (max-width: 540px) {
-
-    nav {
-        height: 60px;
-        padding: 0 10px
-    }
-    nav img {
-        height: 60px;
-    }
-    nav button {
-        font-size: .7em;   
-    }
 
     .wall {
         background-size: cover;
@@ -849,26 +708,6 @@ footer .flag {
         border-radius: 20px;
     }
 
-    footer {
-        height: 260px;
-    }
-    .footer-containter {
-        max-width: 500px;
-    }
-    
-    footer .logoname {
-        height: 80px;
-        padding-bottom: 20px;
-    }
-    
-    footer .flag {
-        height: 25px;
-    }
-
-    footer p {
-        font-size: .6em;
-    }
-
     /* Log in CSS */
 
 .login {
@@ -935,17 +774,6 @@ footer .flag {
 
 
 @media (max-width: 414px) {
-
-    nav {
-        height: 50px;
-        padding: 0 10px
-    }
-    nav img {
-        height: 50px;
-    }
-    nav button {
-        font-size: .7em;   
-    }
 
     .wall {
         background-size: cover;
@@ -1018,25 +846,5 @@ footer .flag {
         margin-top: 15px;
         padding: 7px 30px;
         border-radius: 20px;
-    }
-
-    footer {
-        height: 200px;
-    }
-    .footer-containter {
-        max-width: 350px;
-    }
-    
-    footer .logoname {
-        height: 60px;
-        padding-bottom: 10px;
-    }
-    
-    footer .flag {
-        height: 20px;
-    }
-
-    footer p {
-        font-size: .5em;
     }
 }

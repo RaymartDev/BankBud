@@ -1,5 +1,6 @@
-import Navbar from '../components/navbar/navbar'
-import Footer from '../components/footer/footer'
+import Navbar from '../components/nav/Navbar'
+import Footer from '../components/footer/Footer'
+import {Link} from 'react-router-dom'
 
 const Login = () => {
     return (
@@ -12,13 +13,13 @@ const Login = () => {
                         <hr />
                         <input 
                         type='string'
-                        required='true'
+                        required={true}
                         placeholder='Enter your Email'
                         />
 
                         <input 
                         type='string'
-                        required='true'
+                        required={true}
                         placeholder='Enter your Password'
                         />
 
@@ -26,9 +27,9 @@ const Login = () => {
                     </div>
 
                     <div className='forgot-create'>
-                        <p>Forgot your Password?</p>
+                        <p className='clickable-text'>Forgot your Password?</p>
                         <hr className='bottom-line'/>
-                        <p>Create New Account? <a href="http://" target="_blank">Click Here.</a></p>
+                        <p>Create New Account? <Link to ='/register' className='clickable-text'>Click Here.</Link></p>
                     </div>
                 </form>
             </div>

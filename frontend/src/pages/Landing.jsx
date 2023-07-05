@@ -1,23 +1,22 @@
-import BankBudLogo from "../assets/images/BankBudLogo/BankBudLogo.png"
-import LogoName from "../assets/images/BankBudLogo/LogoName.png"
-import LogoNameWhite from "../assets/images/BankBudLogo/LogoNameWhite.png"
 import Phone from "../assets/images/BankBudLogo/phone.png"
 import World from "../assets/images/SVG/travel.svg"
 import Payment from "../assets/images/SVG/payment.svg"
 import House from "../assets/images/SVG/house.svg"
 import Car from "../assets/images/SVG/car.svg"
 import Future from "../assets/images/SVG/future.svg"
-import PhilFlag from "../assets/images/SVG/PhilFlag.svg"
 import '../assets/css/landing.css'
-
+import Navbar from '../components/nav/Navbar'
+import Footer from '../components/footer/Footer'
+import { useNavigate } from "react-router-dom"
 
 const Landing = () => {
+    const navigate = useNavigate()
+    const goReg = () => {
+        navigate("/register")
+    }
     return (
         <>
-            <nav>
-                <img src={LogoName}/>
-                <button className="loginBtn">Login</button>
-            </nav>
+            <Navbar />
 
             <main>
                 <section className="wall">
@@ -82,27 +81,11 @@ const Landing = () => {
                 <section className="start">
                     <p>Get Started with</p>
                     <p><span className="bank">Bank</span><span className="bud">Bud</span></p>
-                    <button>Sign up for free today!</button>
+                    <button onClick={goReg}>Sign up for free today!</button>
                 </section>
             </main>
 
-            <footer>
-                <div className="footer-containter">
-                    <div className="credit">
-                        <div>
-                            <img src={LogoNameWhite} className="logoname" />
-                        </div>
-                        <div>
-                            <p>© 1999 - 2023</p>
-                            <img src={PhilFlag} className="flag"/>
-                        </div>
-                    </div>
-                    <hr />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis metus non velit hendrerit ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-
-                    Nunc pulvinar enim et nisi consectetur pretium. Morbi sed diam et dui posuere sagittis. Quisque et dui enim.</p>
-                </div>
-            </footer>
+            <Footer/>
         </>
     )
 }
