@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react"
 import { useEffect } from "react"
+import Cookies from "js-cookie"
 
 export const AuthContext = createContext()
 
@@ -27,10 +28,10 @@ export const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         // Check if token exists in localStorage
-        const token = localStorage.getItem("user");
+        const token = Cookies.get('token')
     
         if (token) {
-          dispatch({ type: "LOGIN", payload: decodedToken.user });
+          dispatch({ type: "LOGIN", payload: token });
         }
       }, [])
 

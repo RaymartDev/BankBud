@@ -4,7 +4,7 @@ const Bank = require('../models/bankModel')
 const Profile = require('../models/profileModel')
 
 const createToken = (_id) => {
-    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
+    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '1h'})
 }
 
 
@@ -22,24 +22,24 @@ const generateAccountNumber = () => {
 
 // login user
 const loginUser = async(req, res) => {
+    const token = req.cookies.token
+    if(token) {
+        try{
+            jwt.verify(token, process.env.SECRET)
+            return res.status(200).json({ token })
+        }catch(err) {
+            return res.status(400).json({error: err.message})
+        }
+    }
+
     const {email, password} = req.body
 
     try {
         const user = await User.login(email, password)
         const token = createToken(user._id)
-        res.status(200).json({email, token})
+        res.cookie('token', token)
+        res.status(200).json({token})
     } catch(err) {
-        res.status(400).json({error: err.message})
-    }
-}
-
-const loginToken = async(req, res) => {
-    const { token } = req.body
-
-    try{
-        const decoded = jwt.verify(token, process.env.SECRET)
-        res.status(200).json({ ...decoded, message: 'Login successful' })
-    }catch(err) {
         res.status(400).json({error: err.message})
     }
 }
@@ -67,7 +67,8 @@ const registerUser = async(req, res) => {
 
         const token = createToken(user._id)
 
-        res.status(200).json({email, token})
+        res.cookie('token', token)
+        res.status(200).json({token})
     }catch(err) {
         res.status(400).json({error: err.message})
     }
@@ -75,6 +76,5 @@ const registerUser = async(req, res) => {
 
 module.exports = {
     loginUser,
-    registerUser,
-    loginToken
+    registerUser
 }
