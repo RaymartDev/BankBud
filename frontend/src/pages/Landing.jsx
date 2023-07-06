@@ -8,6 +8,7 @@ import '../assets/css/landing.css'
 import Navbar from '../components/nav/Navbar'
 import Footer from '../components/footer/Footer'
 import { useNavigate } from "react-router-dom"
+import Icon from '../assets/images/SVG/car.svg'
 
 const Landing = () => {
     const navigate = useNavigate()
@@ -25,12 +26,7 @@ const Landing = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu vulputate elit.</p>
                     <button className="learnbtn">Learn More</button>
                 </div>
-                <div className='message'>
-                    <input
-                    type='String'
-                    />
-                    <button className='send'>Send</button>
-                </div>
+                
                 </section>
                     
                 <section className="goals">

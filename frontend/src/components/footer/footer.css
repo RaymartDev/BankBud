@@ -5,6 +5,13 @@ footer {
     background: var(--primary-color);
     align-items: center;
     display: flex;
+    padding: 20px 0;
+    position: sticky;
+    top: 100%;
+}
+
+footer p {
+    color: white;
 }
 
 .footer-containter {
@@ -108,8 +115,10 @@ footer .flag {
 
 @media (max-width: 540px) {
     footer {
-        height: 260px;
+        height: 200px;
+        padding: 10px 0;
     }
+
     .footer-containter {
         max-width: 500px;
     }

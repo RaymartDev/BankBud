@@ -16,7 +16,8 @@ button:hover {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 50px;
 }
 
 .wall .tagline h2, p, button{
@@ -32,6 +33,7 @@ button:hover {
 .wall p {
     max-width: 600px;
     margin: 20px 0;
+    color: white;
 }
 
 .wall .learnbtn {
@@ -42,18 +44,7 @@ button:hover {
     left: 250px;
 }
 
-.message {
-    display: flex;
-    align-self:flex-end;
-    margin-bottom: 10px;    
-}
-input {
-    border-radius: 2em;
-    padding: .2em;
-    border: 1px solid;
-    border-color: var(--primary-color);
-    width: 200px;
-}
+
 
 .clickable-text {
     cursor: pointer;
@@ -64,16 +55,7 @@ input {
     transition: transform linear 0.4s;
 }
 
-.message {
-    padding: .2em 2em;
-}
 
-.send {
-    border-radius: 2em;
-    padding: .2em 1em;
-    position:relative;
-    right: 20px;
-}
 
 .goals {
     max-width: 1440px;
@@ -104,6 +86,9 @@ input {
 
 .goal-icons img {
     width: 5rem;
+}
+
+.goal-icons p {
     color: white;
 }
 
@@ -460,12 +445,8 @@ input {
     }
     
     .wall .learnbtn {
-        padding: .4em 3.3em;
+        padding: .4em 3em;
         left: 120px;
-    }
-
-    input {
-        width: 170px;
     }
 
     .goal-icons img {
@@ -490,6 +471,13 @@ input {
     .download {
         height: 480px;
     }
+
+    .download-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
     .download img {
         height: 380px;
     }
@@ -501,8 +489,10 @@ input {
     }
     
     .download .download-button button {
-        padding: .8em;
+        padding: .6em;
+        max-width: 200px;
         font-size: .8em;
+        margin-bottom: 5px;
     }
 
     .start {
@@ -566,10 +556,6 @@ input {
         left: 120px;
     }
 
-    input {
-        width: 150px;
-    }
-
     .goal-icons img {
         width: 2.5rem;
         fill: white;
@@ -603,10 +589,11 @@ input {
         font-size: 1.5em;
     }
     
-    .download .download-button button {
+    .download-button button {
         padding: .8em;
         font-size: .5em;
         font-weight: 400;
+        max-width: 150px;
     }
 
     .start {
@@ -628,11 +615,12 @@ input {
     .wall {
         background-size: cover;
         height: 350px;
+        
     }
 
     .wall h2 {
     font-size: 1.5em;
-    max-width: 250px;
+    max-width: 300px;
     }
 
     .wall p {
@@ -645,15 +633,6 @@ input {
         padding: .5em 1em;
         font-size: .6em;
         left: 40px;
-    }
-
-    input {
-        width: 100px;
-        padding: .1em;
-    }
-
-    .send {
-        font-size: .6em;
     }
 
     .goal-icons img {
@@ -687,15 +666,13 @@ input {
         font-size: 1em;
     }
     
-    .download .download-button {
-        display: flex;
-        flex-direction: column;
-    }
+    
     .download .download-button button {
         padding: .6em;
-        font-size: .6em;
+        font-size: .5em;
         font-weight: 400;
         margin-bottom: 10px;
+        max-width: 120px;
     }
 
     .start {
